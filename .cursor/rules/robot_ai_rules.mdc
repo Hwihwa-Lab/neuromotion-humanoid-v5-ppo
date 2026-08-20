@@ -1,0 +1,20 @@
+---
+description: 로봇인공지능기초 MuJoCo Humanoid PPO 강화학습 및 ROBOT AI LAB 대시보드 프로젝트 규칙
+globs: ["*.py", "*.md", "*.zip"]
+alwaysApply: true
+---
+
+# ROBOT AI LAB - 프로젝트 개발 규칙
+
+## 1. 프로젝트 아키텍처
+* `run_gui.py`: 메인 대시보드 실행기 (Pygame 다크 사이버펑크 GUI)
+* `simulation_engine.py`: MuJoCo Humanoid-v5 물리 시뮬레이션 및 17자유도 관절 토크 계산
+* `train_rl.py`: PPO 강화학습 알고리즘, 모델 저장/로드, 손실/엔트로피 지표 계산
+* `mujoko_humanoid.py`: 터미널 전용 다중 모드 실행기
+* `humanoid_ppo_model.zip`: 학습된 PPO 모델 가중치 파일
+
+## 2. 코딩 및 UI 원칙
+* **한글 폰트**: Windows 맑은 고딕(`malgungothic`), Segoe UI를 우선 적용하여 한글 깨짐 방지
+* **저사양 최적화**: 가볍고 부드러운 60fps 네이티브 GUI 유지 (RAM 150MB 수준)
+* **인터랙션**: 마우스 호버 커서(손가락 모양), 클릭 애니메이션, 외란(밀기) 팝업 피드백 필수
+* **레이아웃 안전성**: 차트 및 콘솔 텍스트가 카드 영역을 벗어나지 않도록 패딩 및 클리핑 유지

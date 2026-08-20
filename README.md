@@ -1,0 +1,66 @@
+# 🤖 ROBOT AI LAB 3.0 // Engineering Telemetry Manual
+
+천재디자인에이전트 디자인 시스템과 **인터랙티브 드롭다운 메뉴(Dropdown Menu)**가 장착된 **`ROBOT AI LAB 3.0`** 공식 텔레메트리 매뉴얼입니다.
+
+---
+
+## 🚀 Launch Dashboard (실행 방법)
+
+터미널에서 아래 명령어를 실행합니다:
+
+```powershell
+python run_gui.py
+```
+
+---
+
+## 🖱️ Top Control Header (상단 인터랙티브 버튼 & 드롭다운 메뉴)
+
+상단 버튼들은 마우스 호버 시 **손가락 모양 커서(👆)**와 앰비언트 하이라이트가 적용되며, 드롭다운 메뉴를 통해 원하는 옵션을 즉시 콕 찍어 선택할 수 있습니다.
+
+| Button Name | Type | Options & Function Description |
+| :--- | :---: | :--- |
+| **`[ ● PPO TRAINING ]` / `[ ⏸ PAUSED ]`** | **Action** | **Telemetry Pause / Resume**: AI 학습 및 시뮬레이션 일시정지 / 재개 (단축키: `Space`) |
+| **`[ SPEED: 1X ▼ ]`** | **Dropdown** | **클릭 시 배속 선택 메뉴 팝업**:<br>• `1X  Normal (1x)` : 기본 세밀 관찰 속도<br>• `2X  Fast (2x)` : 2배속 학습<br>• `4X  Hyper (4x)` : 4배속 고속 학습<br>• `8X  Ultra (8x)` : 8배속 초고속 집중 학습 (단축키: `F` 로 빠른 순환 가능) |
+| **`[ PUSH FORCE ▼ ]`** | **Dropdown** | **클릭 시 외란 충격 세기 선택 팝업**:<br>• `Light Push  (15 N)` : 가벼운 툭 밀기<br>• `Medium Push (30 N)` : 중간 균형 흔들림<br>• `Heavy Force (50 N)` : 강한 충격파 테스트 (단축키: `P` 로 기본 30N 인가) |
+| **`[ SAVE MODEL ]`** | **Action** | **Save Checkpoint Weights**: 현재 학습된 신경망 가중치를 `humanoid_ppo_model.zip`으로 저장 (단축키: `S`) |
+| **`[ LOAD MODEL ]`** | **Action** | **Load Checkpoint Weights**: 저장된 모델 가중치 즉시 불러오기 (단축키: `L`) |
+
+---
+
+## 🖥️ Telemetry Layout & Panels (7대 핵심 텔레메트리 패널)
+
+1. **MAIN 3D SIMULATION VIEW**:
+   * MuJoCo Humanoid-v5 실시간 3D 물리 렌더링 화면
+   * 상단 인포바: `EPISODE` // `ALIVE STEPS` // `NOISE SCALE (σ)`
+2. **TOP BENTO STATS CARDS**:
+   * `EPISODE REWARD`: 이번 에피소드 실시간 누적 보상
+   * `PEAK REWARD`: 역대 최고 기록 보상 점수
+   * `20-EP MOVING AVG`: 최근 20 에피소드 이동 평균선
+   * `TOTAL TIMESTEPS`: 환경 상호작용 누적 스텝수
+3. **LEARNING DIAGNOSTICS**:
+   * `Policy Gradient Loss`: 정책 신경망 손실 지표
+   * `Value Function Loss`: 가치 평가 신경망 손실 지표
+   * `Entropy`: 탐색 무작위성 척도 및 학습 업데이트 횟수
+4. **ACTUATOR TORQUES (17 DOF)**:
+   * 17개 관절 모터(복부, 고관절, 무릎, 어깨, 팔꿈치 등)의 실시간 힘 방향 및 세기 듀얼톤 게이지
+5. **REWARD TELEMETRY CURVE**:
+   * 최근 100개 에피소드 보상 꺾은선 차트 (하단 에어리어 필 & 동적 스케일링)
+6. **SYSTEM CONSOLE LOG**:
+   * 에피소드 완료 및 텔레메트리 이벤트 실시간 모노스페이스 로그 (100% 박스 내부 클리핑)
+7. **FOOTER SHORTCUTS**:
+   * 키보드 단축키 가이드 바
+
+---
+
+## ⌨️ Keyboard Shortcuts Reference
+
+| Key | Action | Description |
+| :---: | :--- | :--- |
+| **`Space`** | **Pause / Resume** | 학습 및 3D 물리 시뮬레이션 정지/재개 |
+| **`F`** | **Cycle Speed** | 1X ➡️ 2X ➡️ 4X ➡️ 8X 배속 순환 |
+| **`P`** | **Push Robot** | 로봇에게 외란 충격(30.0 N) 인가 |
+| **`S`** | **Save Model** | 최신 가중치를 `humanoid_ppo_model.zip`으로 저장 |
+| **`L`** | **Load Model** | 저장된 가중치 불러오기 |
+| **`T`** | **Toggle 3D View** | 3D 렌더링 ON / OFF |
+| **`R` / `E`** | **Reset Episode** | 환경 즉시 초기화 |
