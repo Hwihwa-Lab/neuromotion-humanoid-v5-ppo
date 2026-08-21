@@ -112,6 +112,7 @@ python run_gui.py
 
 ## 📂 Repository Contents
 
+* `README.md`: Hugging Face model card, specifications, and telemetry manual.
 * `humanoid_ppo_model.zip`: Pre-trained PPO neural network weights.
 * `simulation_engine.py`: Gymnasium MuJoCo physical engine & 17-DOF torque extractor.
 * `train_rl.py`: Stable-Baselines3 PPO incremental trainer & diagnostics.
