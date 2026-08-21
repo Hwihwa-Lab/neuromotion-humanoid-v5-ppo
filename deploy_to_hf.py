@@ -47,9 +47,7 @@ library_name: stable-baselines3
 [![Hugging Face Hub](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/{repo_id})
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)
 
-> **MuJoCo Humanoid-v5 Continuous Control Telemetry & PPO Reinforcement Learning System**  
-> 🔗 **GitHub Source Code**: [https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)  
-> 🌐 **Model Hub**: [https://huggingface.co/{repo_id}](https://huggingface.co/{repo_id})
+> **MuJoCo Humanoid-v5 Continuous Control Telemetry & PPO Reinforcement Learning System**
 
 ---
 

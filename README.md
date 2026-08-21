@@ -3,9 +3,7 @@
 [![Hugging Face Model Hub](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/hwihwalab/neuromotion-humanoid-v5-ppo)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)
 
-> **MuJoCo Humanoid-v5 PPO Continuous Control & Real-time Engineering Telemetry Dashboard**  
-> * 🌐 **Hugging Face Hub**: [`hwihwalab/neuromotion-humanoid-v5-ppo`](https://huggingface.co/hwihwalab/neuromotion-humanoid-v5-ppo)  
-> * 🐙 **GitHub Repository**: [`Hwihwa-Lab/neuromotion-humanoid-v5-ppo`](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)
+> **MuJoCo Humanoid-v5 PPO Continuous Control & Real-time Engineering Telemetry Dashboard**
 
 천재디자인에이전트 디자인 시스템과 **인터랙티브 드롭다운 메뉴(Dropdown Menu)**가 장착된 **`NEUROMOTION 3.0`** 공식 텔레메트리 매뉴얼입니다.
 
