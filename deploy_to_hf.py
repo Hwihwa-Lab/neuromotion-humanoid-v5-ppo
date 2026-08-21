@@ -113,6 +113,7 @@ python run_gui.py
 ## 📂 Repository Contents
 
 * `README.md`: Hugging Face model card, specifications, and telemetry manual.
+* `README_KR.md`: Dedicated Korean manual ([한국어 매뉴얼](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo/blob/main/README_KR.md)).
 * `humanoid_ppo_model.zip`: Pre-trained PPO neural network weights.
 * `simulation_engine.py`: Gymnasium MuJoCo physical engine & 17-DOF torque extractor.
 * `train_rl.py`: Stable-Baselines3 PPO incremental trainer & diagnostics.
@@ -187,6 +188,7 @@ def deploy(repo_name: str, create_only: bool = False, private: bool = False, tok
     workspace_dir = os.path.dirname(os.path.abspath(__file__))
 
     files_to_upload = [
+        "README_KR.md",
         "humanoid_ppo_model.zip",
         "simulation_engine.py",
         "train_rl.py",
