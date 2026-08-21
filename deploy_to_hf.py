@@ -44,7 +44,12 @@ library_name: stable-baselines3
 
 # 🤖 NeuroMotion // Humanoid-v5 PPO Continuous Control
 
-**NeuroMotion** is an advanced reinforcement learning system and real-time engineering telemetry dashboard for bipedal robotic continuous control in Gymnasium MuJoCo `Humanoid-v5`.
+[![Hugging Face Hub](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/{repo_id})
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)
+
+> **MuJoCo Humanoid-v5 Continuous Control Telemetry & PPO Reinforcement Learning System**  
+> 🔗 **GitHub Source Code**: [https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)  
+> 🌐 **Model Hub**: [https://huggingface.co/{repo_id}](https://huggingface.co/{repo_id})
 
 ---
 
