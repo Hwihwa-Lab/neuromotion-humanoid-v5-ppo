@@ -9,7 +9,6 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.logger import configure
 
 
-
 class RLTrainer:
     """GUI와 실시간으로 연동되는 PPO 강화학습 관리자"""
 

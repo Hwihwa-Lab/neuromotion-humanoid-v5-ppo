@@ -6,13 +6,11 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import numpy as np
-
 import matplotlib.pyplot as plt
 import gymnasium as gym
 
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback
-from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
 
 
 # ==========================================================
@@ -34,7 +32,6 @@ class RealtimePlotCallback(BaseCallback):
         self.ax2 = None
 
     def _on_training_start(self) -> None:
-        # 대화형 모드(interactive mode) 활성화
         plt.ion()
         self.fig, (self.ax1, self.ax2) = plt.subplots(2, 1, figsize=(8, 6))
         self.fig.canvas.manager.set_window_title("Humanoid-v5 학습 실시간 통계")
@@ -42,7 +39,6 @@ class RealtimePlotCallback(BaseCallback):
         plt.show(block=False)
 
     def _on_step(self) -> bool:
-        # 보상 및 스텝 카운트 누적
         rewards = self.locals.get("rewards")
         dones = self.locals.get("dones")
 
@@ -54,12 +50,10 @@ class RealtimePlotCallback(BaseCallback):
             self.episode_rewards.append(self.current_ep_reward)
             self.episode_lengths.append(self.current_ep_length)
 
-            # 이동 평균 계산 (최근 10 에피소드)
             window = min(10, len(self.episode_rewards))
             moving_avg = np.mean(self.episode_rewards[-window:])
             self.moving_avg_rewards.append(moving_avg)
 
-            # 그래프 업데이트
             if len(self.episode_rewards) % self.plot_freq == 0:
                 self._update_plot()
 
@@ -124,13 +118,12 @@ class PeriodicVisualEvalCallback(BaseCallback):
                 total_reward = 0.0
                 step_count = 0
                 while not done:
-                    # 현재 모델로 행동 예측 (결정론적 정책)
                     action, _ = self.model.predict(obs, deterministic=True)
                     obs, reward, terminated, truncated, _ = eval_env.step(action)
                     total_reward += reward
                     step_count += 1
                     done = terminated or truncated
-                    time.sleep(0.01)  # 감상하기 좋은 속도로 조절
+                    time.sleep(0.01)
 
                 if self.verbose > 0:
                     print(f"  > 평가 에피소드 {ep + 1}: 총 보상 = {total_reward:.2f}, 생존 스텝 = {step_count}")
@@ -164,11 +157,10 @@ def run_random_demo(n_steps=500):
     ep_count = 1
 
     for step in range(n_steps):
-        action = env.action_space.sample()  # 무작위 액션
+        action = env.action_space.sample()
         obs, reward, terminated, truncated, info = env.step(action)
         total_reward += reward
-
-        time.sleep(0.015)  # 3D 뷰어 감상을 위한 딜레이
+        time.sleep(0.015)
 
         if terminated or truncated:
             print(f"  [에피소드 {ep_count}] {step + 1}번째 스텝에서 종료 (누적 보상: {total_reward:.2f})")
@@ -188,10 +180,7 @@ def run_live_training(total_timesteps=50000, model_save_path="humanoid_ppo_model
     print(f" 목표 학습 타임스텝: {total_timesteps:,} steps")
     print("=" * 60)
 
-    # 3D 렌더링 환경 생성
     env = make_humanoid_env(render_mode="human")
-
-    # PPO 에이전트 생성
     model = PPO(
         policy="MlpPolicy",
         env=env,
@@ -227,9 +216,7 @@ def run_fast_training(total_timesteps=100000, eval_freq=10000, model_save_path="
     print(f" 목표 학습 타임스텝: {total_timesteps:,} steps")
     print("=" * 60)
 
-    # 고속 학습용 환경 (render_mode=None)
     env = make_humanoid_env(render_mode=None)
-
     model = PPO(
         policy="MlpPolicy",
         env=env,
@@ -286,7 +273,7 @@ def run_watch_trained_model(model_save_path="humanoid_ppo_model.zip", n_episodes
             total_reward += reward
             step_count += 1
             done = terminated or truncated
-            time.sleep(0.015)  # 60fps에 맞춘 부드러운 시각화
+            time.sleep(0.015)
 
         print(f"  [에피소드 {ep + 1}/{n_episodes}] 완료 - 생존 스텝: {step_count}, 총 보상: {total_reward:.2f}")
 
@@ -311,7 +298,6 @@ def main():
     parser.add_argument("--model_path", type=str, default="humanoid_ppo_model.zip", help="모델 저장/로드 경로")
     args = parser.parse_args()
 
-    # 인자로 모드가 지정된 경우 한 번만 실행하고 종료
     if args.mode is not None:
         if args.mode == "train_live":
             run_live_training(total_timesteps=args.timesteps, model_save_path=args.model_path)
@@ -323,7 +309,6 @@ def main():
             run_random_demo(n_steps=args.timesteps if args.timesteps != 50000 else 500)
         return
 
-    # 인자 없이 실행했을 때는 메뉴가 계속 유지되어 번호를 연속해서 선택할 수 있도록 구성
     while True:
         print("\n" + "=" * 65)
         print("   🤖 MuJoCo Humanoid-v5 실시간 시각화 강화학습 시스템 🤖")
@@ -353,4 +338,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

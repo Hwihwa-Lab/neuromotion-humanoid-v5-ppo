@@ -6,7 +6,6 @@ import gymnasium as gym
 import pygame
 
 
-
 class SimulationEngine:
     """MuJoCo Humanoid 시뮬레이션을 관리하는 초경량 엔진"""
 

@@ -11,7 +11,6 @@ from simulation_engine import SimulationEngine
 from train_rl import RLTrainer
 
 
-
 # ==========================================================
 # 천재디자인에이전트 토큰 시스템 (Slate & Semantic Neon)
 # ==========================================================
@@ -76,7 +75,7 @@ class RobotAILabGUI:
         self.push_alert_text = "[ DISTURBANCE INJECTED ]"
         self.save_alert_timer = 0
 
-        # 모던 시스템 폰트 로드 (Pylance Type Error 원천 차단: 쉼표 구분 문자열 사용)
+        # 모던 시스템 폰트 로드
         font_names = "segoeui,malgungothic,arial,helvetica"
         self.font_brand = pygame.font.SysFont(font_names, 18, bold=True)
         self.font_sub = pygame.font.SysFont(font_names, 12)
@@ -85,7 +84,6 @@ class RobotAILabGUI:
         self.font_mono = pygame.font.SysFont("consolas,monospace,courier", 12)
         self.font_small = pygame.font.SysFont(font_names, 11)
         self.font_alert = pygame.font.SysFont(font_names, 14, bold=True)
-
 
         # 엔진 및 트레이너 초기화
         print("[TELEMETRY] Initializing MuJoCo Simulation & PPO Engine...")
@@ -451,7 +449,6 @@ class RobotAILabGUI:
         avg_20 = float(np.mean(list(self.recent_20_rewards))) if len(self.recent_20_rewards) > 0 else 0.0
 
         cards_data = [
-
             ("EPISODE REWARD", f"{self.sim.episode_reward:.1f}", COLOR_CYAN),
             ("PEAK REWARD", f"{self.best_reward:.1f}", COLOR_AMBER),
             ("20-EP MOVING AVG", f"{avg_20:.1f}", COLOR_EMERALD),
