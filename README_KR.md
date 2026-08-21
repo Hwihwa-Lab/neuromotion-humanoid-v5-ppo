@@ -8,7 +8,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch)](https://pytorch.org)
 [![Stable-Baselines3](https://img.shields.io/badge/Stable--Baselines3-PPO-brightgreen)](https://stable-baselines3.readthedocs.io)
 
-> **MuJoCo Humanoid-v5 PPO Continuous Control & Real-time Engineering Telemetry Dashboard**  
+> **MuJoCo Humanoid-v5 PPO Continuous Control & Real-time Engineering Telemetry Dashboard**
 > *[ 🌐 English Documentation ](README.md) | [ 🇰🇷 한국어 매뉴얼 ](README_KR.md)*
 
 천재디자인에이전트 디자인 시스템과 **인터랙티브 드롭다운 메뉴(Dropdown Menu)**가 장착된 **`NEUROMOTION 3.0`** 공식 텔레메트리 매뉴얼입니다.
@@ -33,7 +33,7 @@ python deploy_to_hf.py
 python deploy_to_hf.py --create-only
 ```
 
-> 💡 **향후 모델 업데이트 방법**  
+> 💡 **향후 모델 업데이트 방법**
 > 앞으로 추가 학습을 진행한 후 가중치나 코드를 다시 배포하고 싶으실 때는 언제든 아래 명령어 한 줄만 실행하시면 됩니다:
 > ```powershell
 > python deploy_to_hf.py
