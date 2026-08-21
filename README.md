@@ -1,15 +1,46 @@
-# 🤖 ROBOT AI LAB 3.0 // Engineering Telemetry Manual
+# 🤖 NEUROMOTION 3.0 // Humanoid-v5 Telemetry & RL
+> **MuJoCo Humanoid-v5 PPO Continuous Control & Real-time Engineering Telemetry Dashboard**  
+> *Hugging Face Hub*: [`hwihwalab/neuromotion-humanoid-v5-ppo`](https://huggingface.co/hwihwalab/neuromotion-humanoid-v5-ppo)
 
-천재디자인에이전트 디자인 시스템과 **인터랙티브 드롭다운 메뉴(Dropdown Menu)**가 장착된 **`ROBOT AI LAB 3.0`** 공식 텔레메트리 매뉴얼입니다.
+천재디자인에이전트 디자인 시스템과 **인터랙티브 드롭다운 메뉴(Dropdown Menu)**가 장착된 **`NEUROMOTION 3.0`** 공식 텔레메트리 매뉴얼입니다.
 
 ---
 
-## 🚀 Launch Dashboard (실행 방법)
+## 🚀 Quick Start & Launch Modes (실행 방법)
 
-터미널에서 아래 명령어를 실행합니다:
-
+### 1. 🖥️ 메인 GUI 대시보드 실행 (추천)
+Pygame 기반 실시간 다크 사이버펑크 텔레메트리 대시보드를 실행합니다:
 ```powershell
 python run_gui.py
+```
+
+### 2. 🤗 Hugging Face 모델 허브 배포 (`deploy_to_hf.py`)
+학습된 모델 가중치(`humanoid_ppo_model.zip`)와 실행 코드를 Hugging Face에 원클릭으로 업로드합니다:
+```powershell
+# 전체 모델 및 코드 업로드
+python deploy_to_hf.py
+
+# 파일 업로드 없이 리포지토리(hwihwalab/neuromotion-humanoid-v5-ppo)만 생성할 때
+python deploy_to_hf.py --create-only
+```
+
+> 💡 **향후 모델 업데이트 방법**  
+> 앞으로 추가 학습을 진행한 후 가중치나 코드를 다시 배포하고 싶으실 때는 언제든 아래 명령어 한 줄만 실행하시면 됩니다:
+> ```powershell
+> python deploy_to_hf.py
+> ```
+
+### 3. 💻 터미널 다중 모드 실행기 (`mujoko_humanoid.py`)
+터미널 대화형 메뉴 또는 명령줄 옵션을 통해 다양한 목적별 학습/시연을 실행합니다:
+```powershell
+# 대화형 번호 선택 메뉴 실행
+python mujoko_humanoid.py
+
+# 또는 원하는 모드를 직접 지정하여 실행
+python mujoko_humanoid.py --mode train_live   # [모드 1] 실시간 3D 시각화 + 강화학습
+python mujoko_humanoid.py --mode train_fast   # [모드 2] 고속 백그라운드 학습 + 주기적 3D 평가
+python mujoko_humanoid.py --mode play         # [모드 3] 학습된 모델(humanoid_ppo_model.zip) 3D 보행 시연
+python mujoko_humanoid.py --mode random       # [모드 4] 초기 무작위(Random) 행동 관찰
 ```
 
 ---
@@ -22,7 +53,7 @@ python run_gui.py
 | :--- | :---: | :--- |
 | **`[ ● PPO TRAINING ]` / `[ ⏸ PAUSED ]`** | **Action** | **Telemetry Pause / Resume**: AI 학습 및 시뮬레이션 일시정지 / 재개 (단축키: `Space`) |
 | **`[ SPEED: 1X ▼ ]`** | **Dropdown** | **클릭 시 배속 선택 메뉴 팝업**:<br>• `1X  Normal (1x)` : 기본 세밀 관찰 속도<br>• `2X  Fast (2x)` : 2배속 학습<br>• `4X  Hyper (4x)` : 4배속 고속 학습<br>• `8X  Ultra (8x)` : 8배속 초고속 집중 학습 (단축키: `F` 로 빠른 순환 가능) |
-| **`[ PUSH FORCE ▼ ]`** | **Dropdown** | **클릭 시 외란 충격 세기 선택 팝업**:<br>• `Light Push  (15 N)` : 가벼운 툭 밀기<br>• `Medium Push (30 N)` : 중간 균형 흔들림<br>• `Heavy Force (50 N)` : 강한 충격파 테스트 (단축키: `P` 로 기본 30N 인가) |
+| **`[ PUSH FORCE ▼ ]`** | **Dropdown** | **클릭 시 외란 충격 세기 선택 팝업**:<br>• `Light Push  (15 N)` : 가벼운 툭 밀기<br>• `Medium Push (30 N)` : 중간 균형 흔들림 (기본 외란)<br>• `Heavy Force (50 N)` : 강한 충격파 테스트 (단축키: `P` 로 기본 30N 인가) |
 | **`[ SAVE MODEL ]`** | **Action** | **Save Checkpoint Weights**: 현재 학습된 신경망 가중치를 `humanoid_ppo_model.zip`으로 저장 (단축키: `S`) |
 | **`[ LOAD MODEL ]`** | **Action** | **Load Checkpoint Weights**: 저장된 모델 가중치 즉시 불러오기 (단축키: `L`) |
 
@@ -49,7 +80,7 @@ python run_gui.py
 6. **SYSTEM CONSOLE LOG**:
    * 에피소드 완료 및 텔레메트리 이벤트 실시간 모노스페이스 로그 (100% 박스 내부 클리핑)
 7. **FOOTER SHORTCUTS**:
-   * 키보드 단축키 가이드 바
+   * 키보드 단축키 가이드 바 (`[Space]` `[T]` `[F]` `[P]` `[S]` `[L]` `[R/E]`)
 
 ---
 

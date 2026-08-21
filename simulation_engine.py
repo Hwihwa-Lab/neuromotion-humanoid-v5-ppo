@@ -74,7 +74,7 @@ class SimulationEngine:
         surface = pygame.surfarray.make_surface(np.transpose(frame, (1, 0, 2)))
         return surface
 
-    def apply_push_disturbance(self, force_magnitude: float = 25.0):
+    def apply_push_disturbance(self, force_magnitude: float = 30.0):
         """로봇에게 수평 외력을 가해 균형 유지 능력을 테스트합니다."""
         try:
             unwrapped = self.env.unwrapped

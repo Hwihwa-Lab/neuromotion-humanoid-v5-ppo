@@ -31,12 +31,12 @@ class RLTrainer:
         else:
             self._create_new_model()
 
-        # 학습 진단 메트릭스
-        self.policy_loss = +0.0308
-        self.value_loss = 322.87
-        self.entropy = 15.611
-        self.update_count = 10
-        self.total_timesteps = 5546
+        # 학습 진단 메트릭스 (초기화)
+        self.policy_loss = 0.0
+        self.value_loss = 0.0
+        self.entropy = 0.0
+        self.update_count = 0
+        self.total_timesteps = 0
         self.exploration_noise = 0.60
         self.is_training_active = True
 

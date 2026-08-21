@@ -37,7 +37,7 @@ COLOR_TEXT_MUTED = (100, 116, 139)   # Slate 500
 
 
 class RobotAILabGUI:
-    """ROBOT AI LAB 3.0 마스터 대시보드 메인 클래스"""
+    """NEUROMOTION 3.0 마스터 대시보드 메인 클래스"""
 
     def __init__(self, width=1280, height=820):
         pygame.init()
@@ -45,7 +45,7 @@ class RobotAILabGUI:
         self.width = width
         self.height = height
         self.screen = pygame.display.set_mode((self.width, self.height))
-        pygame.display.set_caption("ROBOT AI LAB 3.0 // Humanoid-v5 Continuous Control Telemetry")
+        pygame.display.set_caption("NEUROMOTION 3.0 // Humanoid-v5 Continuous Control Telemetry")
 
         self.clock = pygame.time.Clock()
         self.is_running = True
@@ -98,7 +98,7 @@ class RobotAILabGUI:
         self.recent_rewards = collections.deque(maxlen=100)
         self.recent_20_rewards = collections.deque(maxlen=20)
         self.console_logs = collections.deque(maxlen=5)
-        self.console_logs.append("[SYSTEM] ROBOT AI LAB 3.0 Telemetry Online.")
+        self.console_logs.append("[SYSTEM] NEUROMOTION 3.0 Telemetry Online.")
 
         # 마우스 인터랙션 버튼 배치
         self._init_buttons()
@@ -291,7 +291,7 @@ class RobotAILabGUI:
 
         # 브랜드 블록
         pygame.draw.rect(self.screen, COLOR_CYAN, (20, 15, 4, 26), border_radius=2)
-        title_surf = self.font_brand.render("ROBOT AI LAB // HUMANOID-V5", True, COLOR_TEXT_PRIMARY)
+        title_surf = self.font_brand.render("NEUROMOTION // HUMANOID-V5", True, COLOR_TEXT_PRIMARY)
         self.screen.blit(title_surf, (32, 14))
 
         sub_surf = self.font_mono.render("PPO CONTINUOUS CONTROL", True, COLOR_TEXT_MUTED)
@@ -598,11 +598,11 @@ class RobotAILabGUI:
     def _draw_footer(self):
         """하단 단축키 가이드 바"""
         footer_y = self.height - 36
-        guide_text = "[Space: Pause/Resume]  [T: Toggle 3D]  [F: Speed]  [P: Push]  [S: Save]  [L: Load]  [R: Reset]"
+        guide_text = "[Space: Pause/Resume]  [T: Toggle 3D]  [F: Speed]  [P: Push]  [S: Save]  [L: Load]  [R/E: Reset]"
         guide_surf = self.font_mono.render(guide_text, True, COLOR_TEXT_MUTED)
         self.screen.blit(guide_surf, (20, footer_y))
 
 
 if __name__ == "__main__":
-    app = RobotAILabGUI(width=1280, height=800)
+    app = RobotAILabGUI(width=1280, height=820)
     app.run()
