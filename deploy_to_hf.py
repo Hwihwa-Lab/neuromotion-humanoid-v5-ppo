@@ -47,11 +47,14 @@ library_name: stable-baselines3
 [![Hugging Face Hub](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/{repo_id})
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)
 
-> **MuJoCo Humanoid-v5 Continuous Control Telemetry & PPO Reinforcement Learning System**
+> **MuJoCo Humanoid-v5 Continuous Control Telemetry & PPO Reinforcement Learning System**  
+> *[ 🌐 English Documentation ](https://huggingface.co/{repo_id}/blob/main/README.md) | [ 🇰🇷 한국어 매뉴얼 ](https://huggingface.co/{repo_id}/blob/main/README_KR.md)*
+
+This repository contains an advanced continuous reinforcement learning system (PPO) and a real-time engineering telemetry dashboard for bipedal robotic continuous control in [Gymnasium](https://gymnasium.farama.org/environments/mujoco/humanoid/) MuJoCo `Humanoid-v5`.
 
 ---
 
-## 📊 Model Specifications
+## 📊 Model Specifications & Benchmark Results
 
 | Parameter | Specification |
 | :--- | :--- |
@@ -61,6 +64,8 @@ library_name: stable-baselines3
 | **Algorithm** | Proximal Policy Optimization (PPO) |
 | **Framework** | Stable-Baselines3 / PyTorch |
 | **Architecture** | Actor-Critic MLP Policy (MlpPolicy) |
+| **Average Survival Steps** | **`88.5 steps`** *(Peak: `109 steps`)* |
+| **Average Cumulative Reward** | **`+455.52`** *(Peak: `+549.18`)* |
 
 ---
 
