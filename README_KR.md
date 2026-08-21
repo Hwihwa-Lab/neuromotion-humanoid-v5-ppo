@@ -4,6 +4,9 @@
 [![Language: 한국어](https://img.shields.io/badge/Language-한국어-green)](README_KR.md)
 [![Hugging Face Model Hub](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/hwihwalab/neuromotion-humanoid-v5-ppo)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)
+[![Gymnasium](https://img.shields.io/badge/Gymnasium-MuJoCo%20Humanoid--v5-0080FF)](https://gymnasium.farama.org/environments/mujoco/humanoid/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch)](https://pytorch.org)
+[![Stable-Baselines3](https://img.shields.io/badge/Stable--Baselines3-PPO-brightgreen)](https://stable-baselines3.readthedocs.io)
 
 > **MuJoCo Humanoid-v5 PPO Continuous Control & Real-time Engineering Telemetry Dashboard**  
 > *[ 🌐 English Documentation ](README.md) | [ 🇰🇷 한국어 매뉴얼 ](README_KR.md)*

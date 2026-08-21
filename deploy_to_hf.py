@@ -44,8 +44,13 @@ library_name: stable-baselines3
 
 # 🤖 NeuroMotion // Humanoid-v5 PPO Continuous Control
 
-[![Hugging Face Hub](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/{repo_id})
+[![Language: English](https://img.shields.io/badge/Language-English-blue)](https://huggingface.co/{repo_id}/blob/main/README.md)
+[![Language: 한국어](https://img.shields.io/badge/Language-한국어-green)](https://huggingface.co/{repo_id}/blob/main/README_KR.md)
+[![Hugging Face Model Hub](https://img.shields.io/badge/🤗%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/{repo_id})
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/Hwihwa-Lab/neuromotion-humanoid-v5-ppo)
+[![Gymnasium](https://img.shields.io/badge/Gymnasium-MuJoCo%20Humanoid--v5-0080FF)](https://gymnasium.farama.org/environments/mujoco/humanoid/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch)](https://pytorch.org)
+[![Stable-Baselines3](https://img.shields.io/badge/Stable--Baselines3-PPO-brightgreen)](https://stable-baselines3.readthedocs.io)
 
 > **MuJoCo Humanoid-v5 Continuous Control Telemetry & PPO Reinforcement Learning System**  
 > *[ 🌐 English Documentation ](https://huggingface.co/{repo_id}/blob/main/README.md) | [ 🇰🇷 한국어 매뉴얼 ](https://huggingface.co/{repo_id}/blob/main/README_KR.md)*
